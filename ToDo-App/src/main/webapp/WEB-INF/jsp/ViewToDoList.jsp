@@ -14,6 +14,21 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 	
 	<style>
+		html, body {
+			height: 100%;
+		    margin: 0;
+		    padding: 0;
+		}
+
+		body {
+			background-image: url('https://img.freepik.com/premium-photo/todo-list-colorful-background_204719-21672.jpg');
+		    background-size: cover;
+		    background-repeat: no-repeat;
+		    background-position: center;
+			background-attachment: fixed;
+		}
+
+		
 		a{
 			color : white;
 		}

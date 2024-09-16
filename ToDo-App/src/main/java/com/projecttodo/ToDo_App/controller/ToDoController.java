@@ -20,24 +20,24 @@ public class ToDoController {
 	@Autowired
 	private ToDoService service;
 	
-	@GetMapping({"/", "/viewToDoList"})
+	@GetMapping({"/", "viewToDoList"})
 	public String viewAllToDoItems(Model model, @ModelAttribute("message") String message) {
 	    model.addAttribute("list", service.getAllToDoItems());
-	    model.addAttribute("msg", message);
+	    model.addAttribute("message", message);
 		
 		return "ViewToDoList";
 	}
 	
 	
 	
-	@PostMapping("/updateToDoStatus/{id}")
+	@GetMapping("/updateToDoStatus/{id}")
     public String updateToDoStatus(@PathVariable Long id, RedirectAttributes redirectAttributes) {
 		if(service.updateStatus(id)) {
 			redirectAttributes.addFlashAttribute("message", "Update Sucessfull.....");
-			return "redirect:/ViewToDoList";
+			return "redirect:/viewToDoList";
 		}
 		redirectAttributes.addFlashAttribute("message", "Update Failed!!!");
-		return "redirect:/ViewToDoList";
+		return "redirect:/viewToDoList";
 	}
     
 	
@@ -54,7 +54,7 @@ public class ToDoController {
     public String saveToDoItem(ToDo todo,RedirectAttributes redirectAttributes) {
     	if(service.saveOrUpdateToDoItem(todo)) {
     		redirectAttributes.addFlashAttribute("message", "save todo item is sucessfull.....");
-    		return "redirect:/ViewToDoList";
+    		return "redirect:/viewToDoList";
     	}
     	redirectAttributes.addFlashAttribute("message", "save todo item is failed!!!");
     	return "redirect:/addToDoItem";
@@ -74,7 +74,7 @@ public class ToDoController {
     public String editSaveToDoItem(ToDo todo,RedirectAttributes redirectAttributes) {
     	if(service.saveOrUpdateToDoItem(todo )) {
 			redirectAttributes.addFlashAttribute("message", "Edit Sucessfull.....");
-			return "redirect:/ViewToDoList";
+			return "redirect:/viewToDoList";
 		}
 		redirectAttributes.addFlashAttribute("message", "Edit Failed!!!");
 		return "redirect:/editToDoItem/"+todo.getId();
@@ -88,6 +88,6 @@ public class ToDoController {
     		redirectAttributes.addFlashAttribute("message", "Deleted the Item Sucessfully.....");
     	}
     	redirectAttributes.addFlashAttribute("message", "Deletion of Item Failed.....");
-    	return "redirect:/ViewToDoList";
+    	return "redirect:/viewToDoList";
     }
 }
