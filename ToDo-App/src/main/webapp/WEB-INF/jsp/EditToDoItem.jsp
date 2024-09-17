@@ -67,7 +67,7 @@
 							
 			    <div class = "row p-2">
 					<div class = "col-md-2">
-						<button type = "submit" value = "Register" class="btn-btn-success">Save</button>
+						<button type = "submit" value = "Register" class="btn btn-success">Save</button>
 					</div>
 				</div>			
 			</form:form>
