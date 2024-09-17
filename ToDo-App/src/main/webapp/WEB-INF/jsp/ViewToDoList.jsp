@@ -21,7 +21,7 @@
 		}
 
 		body {
-			background-image: url('https://img.freepik.com/premium-photo/todo-list-colorful-background_204719-21672.jpg');
+			background-image: url('https://res.cloudinary.com/imagist/image/fetch/q_auto,f_auto,c_scale,w_2624/https%3A%2F%2Ftodoist.com%2Fstatic%2Fproduct-ui%2Fbackgrounds%2Fwave-one-red.png');
 		    background-size: cover;
 		    background-repeat: no-repeat;
 		    background-position: center;
