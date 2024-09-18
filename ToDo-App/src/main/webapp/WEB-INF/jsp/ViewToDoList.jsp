@@ -59,16 +59,15 @@
 						<td>${todo.title}</td>
 						<td>${todo.date}</td>
 						<td>${todo.status}</td>
-						<td><button type="button" class ="btn btn-success">
-							<a href = "/updateToDoStatus/${todo.id}">Mark Complete</a>
+						<td><button type="button" class="btn btn-success">
+							<a href="/updateToDoStatus/${todo.id}">Mark Complete</a>
 						</button></td>
-						<td><button type="button" class ="btn btn-primary">
-							<a href = "/editToDoItem/${todo.id}">Edit</a>
+						<td><button type="button" class="btn btn-primary">
+						    <a href="/editToDoItem/${todo.id}">Edit</a>
 						</button></td>
-						<td><button type="button" class ="btn btn-danger">
-							<a href = "/DeleteToDoItem/${todo.id}">Delete</a>
+						<td><button type="button" class="btn btn-danger">
+						     <a href="/deleteToDoItem/${todo.id}">Delete</a>
 						</button></td>
-					</tr>
 				 </c:forEach>
 			   </table>
 			</form:form>

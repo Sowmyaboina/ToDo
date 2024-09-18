@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.projecttodo.ToDo_App.model.ToDo;
+import com.projecttodo.ToDo_App.repository.IToDoRepo;
 
 @Service
 public class ToDoService {
@@ -44,9 +45,9 @@ public class ToDoService {
 	public boolean deleteToDoItem(Long id){
 		repo.deleteById(id);
 		
-		if(getToDoItemById(id) != null) {
-			return false;
+		if(repo.findById(id).isEmpty()) {
+			return true;
 		}
-		return true;
+		return false;
 	}
 }

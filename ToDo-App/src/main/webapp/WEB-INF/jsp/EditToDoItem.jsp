@@ -47,13 +47,12 @@
 				</div>
 							
 				<div class = "row">
-					<div class = "form-group col-md-12"> 
-						<label class = "col-md-3" for="date">Date</label>
-						<div class = "col-md-6">
-							<form:input type = "date" path = "date" id = "date"
-								class = "form-control input-sm" required = "required"/>
-						</div>
-					</div>
+				    <div class = "form-group col-md-12"> 
+				        <label class = "col-md-3" for="date">Date</label>
+				        <div class = "col-md-6">
+				            <form:input type="date" path="date" id="date" class="form-control input-sm" required="required" min="${currentDate}"/>
+				        </div>
+				    </div>
 				</div>
 				
 				<div class = "row">
@@ -99,6 +98,7 @@
 			}
 
 		}
+		document.getElementById('date').min = new Date().toISOString().split('T')[0];
 	</script>			
 							
 </body>
