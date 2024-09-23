@@ -8,10 +8,10 @@
 	<meta charset = "ISO-8859-1">
 	<title>Edit ToDo Item</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-	<script src = "https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 	
 	<style>
@@ -76,26 +76,27 @@
 	<script th:inline ="javascript">
 		window.onload=function(){
 			var msg = "${message}";
+			console.log(msg);
 			if(msg == "Edit Failed"){
 				Command: toastr["error"]("Something went wrong with the edit.")
 			}
 			
 			toastr.options = {
-				"closeButton": true,
-				"debug": false,
-				"newestOnTop": false,
-				"progressBar": true,
-				"positionClass": "toast-top-right",
-				"preventDuplicates": false,
-				"showDuration": "300",
-				"hideDuration": "1000",
-				"timeOut": "5000",
-				"extendedTimeOut": "1000",
-				"showEasing": "swing",
-				"hideEasing": "linear",
-				"showMethod": "fadeIn",
-				"hideMethod": "fadeOut"
-			}
+				 "closeButton": true,
+			     "debug": false,
+			     "newestOnTop": false,
+			     "progressBar": true,
+			     "positionClass": "toast-top-right",
+			     "preventDuplicates": false,
+			     "showDuration": "300",
+			     "hideDuration": "1000",
+			     "timeOut": "5000",
+			     "extendedTimeOut": "1000",
+			     "showEasing": "swing",
+			     "hideEasing": "linear",
+			     "showMethod": "fadeIn",
+			     "hideMethod": "fadeOut"
+			 }
 
 		}
 		document.getElementById('date').min = new Date().toISOString().split('T')[0];
